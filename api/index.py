@@ -4,13 +4,11 @@ from firebase import firebase
 import uuid
 from flask_cors import CORS, cross_origin
 from flasgger import Swagger
-import googlemaps
 import jsonify
 import requests
 import jsonpickle
 import numpy as np
 import pickle
-# from scipy import spatial
 import re
 
 app = Flask(__name__)
