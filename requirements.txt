@@ -4,9 +4,7 @@ firebase
 uuid
 flask_cors
 flasgger
-googlemaps
 jsonify
 requests
 jsonpickle
 numpy
-scipy
