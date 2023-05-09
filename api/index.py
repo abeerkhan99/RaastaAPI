@@ -86,29 +86,6 @@ def get_potholes(TypePoints):
         
   
 LOAD_TREE = 1
-def load_points(potholes, speedbreakers):
-    result = firebase.get('/pothole-locations', None)
-    for key1, value in result.items():
-        latlong = []
-        for key2, value2 in value.items():
-            latlong.append(value2)
-        potholes.append(latlong)
-
-    result = firebase.get('/speedbreaker-locations', None)
-    for key1, value in result.items():
-        latlong = []
-        for key2, value2 in value.items():
-            latlong.append(value2)
-        speedbreakers.append(latlong)
-    
-    return potholes, speedbreakers
-
-# def build_kd_trees(potholes, speedbreakers):
-#     p_tree = spatial.cKDTree(potholes)
-#     s_tree = spatial.cKDTree(speedbreakers)
-#     pickle.dump(p_tree,open('KD_Tree/pothole_tree.p','wb'))
-#     pickle.dump(s_tree,open('KD_Tree/speedbreaker_tree.p','wb'))
-  
 @app.route('/get_nearest_neighbor/<path:input>', methods=['GET'])
 def nearest_neighbor(input):
   """
