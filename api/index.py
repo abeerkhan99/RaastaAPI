@@ -10,7 +10,7 @@ import requests
 import jsonpickle
 import numpy as np
 import pickle
-from scipy import spatial
+# from scipy import spatial
 import re
 
 app = Flask(__name__)
@@ -103,11 +103,11 @@ def load_points(potholes, speedbreakers):
     
     return potholes, speedbreakers
 
-def build_kd_trees(potholes, speedbreakers):
-    p_tree = spatial.cKDTree(potholes)
-    s_tree = spatial.cKDTree(speedbreakers)
-    pickle.dump(p_tree,open('KD_Tree/pothole_tree.p','wb'))
-    pickle.dump(s_tree,open('KD_Tree/speedbreaker_tree.p','wb'))
+# def build_kd_trees(potholes, speedbreakers):
+#     p_tree = spatial.cKDTree(potholes)
+#     s_tree = spatial.cKDTree(speedbreakers)
+#     pickle.dump(p_tree,open('KD_Tree/pothole_tree.p','wb'))
+#     pickle.dump(s_tree,open('KD_Tree/speedbreaker_tree.p','wb'))
   
 @app.route('/get_nearest_neighbor/<path:input>', methods=['GET'])
 def nearest_neighbor(input):
