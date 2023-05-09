@@ -1,0 +1,14 @@
+flask
+flask_restful
+firebase
+uuid
+flask_cors
+flasgger
+googlemaps
+jsonify
+requests
+jsonpickle
+numpy as np
+pickle
+scipy.spatial
+re
