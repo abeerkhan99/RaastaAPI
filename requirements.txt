@@ -9,6 +9,5 @@ jsonify
 requests
 jsonpickle
 numpy
-pickle
 scipy.spatial
 re
