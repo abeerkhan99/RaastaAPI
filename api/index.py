@@ -10,7 +10,7 @@ import requests
 import jsonpickle
 import numpy as np
 import pickle
-import scipy.spatial
+from scipy import spatial
 import re
 
 app = Flask(__name__)
@@ -18,6 +18,7 @@ CORS(app, support_credentials=True)
 key = ""
 # connect to firebase
 firebase = firebase.FirebaseApplication('https://raasta-c542d-default-rtdb.asia-southeast1.firebasedatabase.app/', None)
+gmaps = googlemaps.Client(key = 'AIzaSyA9j3ueqN9J9KHKGJGz6iB5CJtV7x5Cuyc')
 
 template = {
   "info": {
@@ -103,8 +104,8 @@ def load_points(potholes, speedbreakers):
     return potholes, speedbreakers
 
 def build_kd_trees(potholes, speedbreakers):
-    p_tree = scipy.spatial.cKDTree(potholes)
-    s_tree = scipy.spatial.cKDTree(speedbreakers)
+    p_tree = spatial.cKDTree(potholes)
+    s_tree = spatial.cKDTree(speedbreakers)
     pickle.dump(p_tree,open('KD_Tree/pothole_tree.p','wb'))
     pickle.dump(s_tree,open('KD_Tree/speedbreaker_tree.p','wb'))
   
