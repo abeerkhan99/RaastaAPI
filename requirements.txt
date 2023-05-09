@@ -8,3 +8,4 @@ jsonify
 requests
 jsonpickle
 numpy
+gunicorn
