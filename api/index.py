@@ -12,7 +12,6 @@ import pickle
 import re
 
 app = Flask(__name__)
-CORS(app, support_credentials=True)
 # connect to firebase
 firebase = firebase.FirebaseApplication('https://raasta-c542d-default-rtdb.asia-southeast1.firebasedatabase.app/', None)
 
@@ -25,7 +24,6 @@ template = {
 Swagger(app, template=template)
 
 @app.route('/get_points/<TypePoints>', methods=['GET'])
-@cross_origin(origin='*')
 def get_potholes(TypePoints):
     """
     Get specific type of points from the database.
